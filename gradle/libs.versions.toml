@@ -1,3 +1,6 @@
+[metadata]
+applicationId = "id.nisyafawwaz.nyampur"
+
 [versions]
 agp = "8.7.0"
 glide = "4.16.0"
@@ -37,6 +40,9 @@ material = { group = "com.google.android.material", name = "material", version.r
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 
+[bundles]
+androidCore = ["androidx-appcompat", "androidx-activity", "androidx-constraintlayout", "androidx-lifecycle-viewmodel", "androidx-swiperefreshlayout", "material"]
+
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
@@ -44,3 +50,5 @@ kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 buildKonfig = { id = "com.codingfeline.buildkonfig", version.ref = "buildKonfig" }
 kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+androidConfiguration = { id = "android-configuration" }
+sharedAndroidConfiguration = { id = "shared-android-configuration" }
