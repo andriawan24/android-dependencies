@@ -1,30 +1,22 @@
 plugins {
     `kotlin-dsl`
     `java-gradle-plugin`
-}
-
-gradlePlugin {
-    plugins {
-        create("shared-android-configuration") {
-            id = "shared-android-configuration"
-            implementationClass = "com.andriawan.configuration.SharedAndroidConfigurationPlugin"
-        }
-
-        create("android-configuration") {
-            id = "android-configuration"
-            implementationClass = "com.andriawan.configuration.AndroidConfigurationPlugin"
-        }
-    }
-}
-
-repositories {
-    google()
-    mavenCentral()
+    alias(libs.plugins.ksp)
 }
 
 dependencies {
-    implementation("com.android.tools.build:gradle:8.7.0")
-    implementation(kotlin("gradle-plugin", "2.0.20"))
-    implementation(kotlin("android-extensions"))
-    implementation(kotlin("script-runtime"))
+    compileOnly(libs.plugin.gradle)
+    compileOnly(libs.plugin.kgp)
+    compileOnly(libs.plugin.ksp)
+}
+
+gradlePlugin {
+    val androidAppShared by plugins.creating {
+        id = "com.andriawan.shared-android-configuration"
+        implementationClass = "com.andriawan.configuration.SharedAndroidConfigurationPlugin"
+    }
+    val androidApp by plugins.creating {
+        id = "com.andriawan.android-configuration"
+        implementationClass = "com.andriawan.configuration.AndroidConfigurationPlugin"
+    }
 }
