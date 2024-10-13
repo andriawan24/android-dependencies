@@ -1,11 +1,9 @@
-package com.nisyafawwaz.nyampurplugin
+package com.andriawan.configuration
 
 import org.gradle.api.JavaVersion
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 object Configs {
-    const val APPLICATION_ID = "id.nisyafawwaz.nyampur"
-    const val ANDROID_APPLICATION_ID = "id.nisyafawwaz.nyampur.android"
     const val MIN_SDK = 24
     const val TARGET_SDK = 35
     const val COMPILE_SDK = 35

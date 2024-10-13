@@ -7,12 +7,12 @@ gradlePlugin {
     plugins {
         create("shared-android-configuration") {
             id = "shared-android-configuration"
-            implementationClass = "com.nisyafawwaz.nyampurplugin.SharedAndroidConfigurationPlugin"
+            implementationClass = "com.andriawan.configuration.SharedAndroidConfigurationPlugin"
         }
 
         create("android-configuration") {
             id = "android-configuration"
-            implementationClass = "com.nisyafawwaz.nyampurplugin.AndroidConfigurationPlugin"
+            implementationClass = "com.andriawan.configuration.AndroidConfigurationPlugin"
         }
     }
 }
