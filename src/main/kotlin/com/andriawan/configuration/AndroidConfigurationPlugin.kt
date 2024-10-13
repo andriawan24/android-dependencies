@@ -53,6 +53,10 @@ class AndroidConfigurationPlugin : Plugin<Project> {
                     }
                 }
 
+                buildFeatures.apply {
+                    viewBinding = true
+                }
+
                 tasks.withType(KotlinJvmCompile::class.java).configureEach {
                     compilerOptions {
                         jvmTarget.set(Configs.JVM_TARGET)
